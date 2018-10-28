@@ -1,0 +1,9 @@
+PaintPane {
+	-fx-background-color: lightgray;
+}
+
+AnchorPane {
+	-fx-border-color: gray;
+	-fx-border-width:  3;
+	-fx-background-color: transparent;
+}
