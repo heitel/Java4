@@ -1,0 +1,70 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000010098b48a, pid=1360, tid=22531
+#
+# JRE version: Java(TM) SE Runtime Environment (10.0.2+13) (build 10.0.2+13)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (10.0.2+13, mixed mode, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# C  [libjimage.dylib+0x248a]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x2c
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:50096 -javaagent:/Applications/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/231/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 application.Main
+
+Host: iMac14,2 x86_64 3200 MHz, 4 cores, 24G, Darwin 18.0.0
+Time: Tue Oct 30 06:47:27 2018 CET elapsed time: 20 seconds (0d 0h 0m 20s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fb1f4800000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=22531, stack(0x00007000040e4000,0x00007000041e4000)]
+
+Stack: [0x00007000040e4000,0x00007000041e4000],  sp=0x00007000041e22b0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.dylib+0x248a]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x2c
+C  [libjimage.dylib+0x2831]  JIMAGE_FindResource+0xd7
+V  [libjvm.dylib+0x2162b9]  ClassPathImageEntry::open_stream(char const*, Thread*)+0x45
+V  [libjvm.dylib+0x2187ca]  ClassLoader::load_class(Symbol*, bool, Thread*)+0x16a
+V  [libjvm.dylib+0x7164c6]  SystemDictionary::load_instance_class(Symbol*, Handle, Thread*)+0x36e
+V  [libjvm.dylib+0x715445]  SystemDictionary::resolve_instance_class_or_null(Symbol*, Handle, Handle, Thread*)+0x4fd
+V  [libjvm.dylib+0x714b63]  SystemDictionary::resolve_or_fail(Symbol*, Handle, Handle, bool, Thread*)+0x1b
+V  [libjvm.dylib+0x283f64]  ConstantPool::klass_at_impl(constantPoolHandle const&, int, bool, Thread*)+0x10c
+V  [libjvm.dylib+0x69bffa]  ConstantPool::klass_at(int, Thread*)+0x4e
+V  [libjvm.dylib+0x3ce5a5]  InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)+0x2d
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@10.0.2
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x3d8c0e]  JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)+0x216
+V  [libjvm.dylib+0x3d87c8]  JavaCalls::call_static(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)+0xe2
+V  [libjvm.dylib+0x62f954]  signal_thread_entry(JavaThread*, Thread*)+0x357
+V  [libjvm.dylib+0x74679c]  JavaThread::thread_main_inner()+0x86
+V  [libjvm.dylib+0x633a5f]  thread_native_entry(Thread*)+0x12b
+C  [libsystem_pthread.dylib+0x333d]  _pthread_body+0x7e
+C  [libsystem_pthread.dylib+0x62a7]  _pthread_start+0x46
+C  [libsystem_pthread.dylib+0x2425]  thread_start+0xd
+C  0x0000000000000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@10.0.2
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000008
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x000000010098000d is an unknown value
+RCX=0x0000000000000023 is an unknown value
+RDX=0x00007000041e33e0 is pointing into the stack for thread: 0x00007fb1f4800000
+RSP=0x00007000041e22b0 is pointing into the stack for thread: 0x00007fb1f4800000
+RBP=0x00007000041e2320 is pointing into the stack for thread: 0x00007fb1f4800000
+RSI=0x000000000000c8a3 is an unknown value
+RDI=0x000000010098000d is an unknown value
+R8 =0x00007000041e33e0 is pointing into the stack for thread: 0x00007fb1f4800000
+R9 =0x00007000041e32f0 is pointing into the stack for thread: 0x00007fb1f4800000
+R10=
